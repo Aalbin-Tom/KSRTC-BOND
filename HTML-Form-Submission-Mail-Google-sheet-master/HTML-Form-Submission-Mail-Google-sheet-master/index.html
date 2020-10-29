@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h2><B>KSRTC TSR BOND</B></h2>
+          <p> REGISTER FOR BOND TRANSPORTATION</p>
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name..">
+              <label for="lname">Email</label>
+              <input type="text" id="lname" name="email" placeholder="Your last name..">
+			  <label for="fname"> Phone number</label>
+              <input type="text" id="Phone NO" name="Phone NO" placeholder="Mobile number..">
+			  <label for="fname"> From</label>
+              <input type="text" id="start place" name="FROM" placeholder="enter srating point..">
+			  <label for="fname"> TO</label>
+              <input type="text" id="Destination" name="TO" placeholder="enter destination point..">
+              <label for="days">NO:Days</label>
+              <select id="days" name="Days">
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+              </select
+              <label for="subject"></label>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+            <img src="crossroads.png" style="width:100%">
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxodOsB5XPPQcut6b07AzsbYcsQsG2BzVv2YFGEcgqJEKl63QDJ/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
